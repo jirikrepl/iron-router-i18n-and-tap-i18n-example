@@ -1,0 +1,45 @@
+<template name="layout">
+  <head>
+    <title>{{_ "title"}}</title>
+  </head>
+  <body>
+    <header>
+      <ul class="langMenu">
+        <li><a id="en" href="#">EN</a></li>
+        <li><a id="fr" href="#">FR</a></li>
+        <br>
+        <li><strong>{{_ "langSelector"}}</strong>{{ currentLanguage }}</li>
+      </ul>
+    </header>
+    {{> yield}}
+  </body>
+</template>
+
+<template name="Home">
+  {{> Nav}}
+  <h1>{{_ "homepage"}}</h1>
+</template>
+
+<template name="One">
+  {{> Nav}}
+  <h1>{{_ "pageOne"}}</h1>
+</template>
+
+<template name="Two">
+  {{> Nav}}
+  <h1>{{_ "pageTwo"}}</h1>
+</template>
+
+<template name="Nav">
+  <ul>
+    <li>
+      <a href="{{pathFor 'home'}}">{{_ "homePageLink"}}</a>
+    </li>
+    <li>
+      <a href="{{pathFor 'one'}}">{{_ "pageOne"}}</a>
+    </li>
+    <li>
+      <a href="{{pathFor 'two'}}">{{_ "pageTwo"}}</a>
+    </li>
+  </ul>
+</template>
